@@ -37,7 +37,7 @@
     ```
     git push <远程仓库地址，在github上查看>
     ```
-    上传并同步到远程仓库，通过密码身份验证用户身份已经弃用，现在用token的方式验证身份，如何操作请看[这里](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls)
+    上传并同步到远程仓库，通过密码身份验证用户身份已经弃用，现在用token的方式验证身份，如何操作请看[这里](https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls)，生成token之后用token代替密码即可
 ### 其余常用操作
 ```
 git add .
