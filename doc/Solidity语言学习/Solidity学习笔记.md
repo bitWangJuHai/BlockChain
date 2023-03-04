@@ -18,11 +18,32 @@
     4. 状态变量强制是storage类型，这是唯一一处可以在声明引用类型的变量时省略变量存储位置的地方
     5. 外部函数（external）的参数强制是calldata类型
 - Solidity的三种异常处理：revert()、require()、assert()
-```
-revert("Something bad happened");           //无条件撤销交易所有的状态更改，返回指定的异常信息，将剩余的gas退还给调用者
-require(condition, "something bad happened")    //一旦条件不成立则撤销交易所有的状态更改，返回指定的异常信息，将剩余的gas退还给调用者
-assert(condition)               //一旦条件不成立则撤销交易所有的状态更改，消耗掉所有的gas
-```
+    ```
+    revert("Something bad happened");           //无条件撤销交易所有的状态更改，返回指定的异常信息，将剩余的gas退还给调用者
+    require(condition, "something bad happened")    //一旦条件不成立则撤销交易所有的状态更改，返回指定的异常信息，将剩余的gas退还给调用者
+    assert(condition)               //一旦条件不成立则撤销交易所有的状态更改，消耗掉所有的gas
+    ```
 &emsp;&emsp;注：assert应该用于程序错误的检测比如溢出，避免“永远无法发生”的情况发生。revert和require用于判断某些行为是否违反了合同，assert用于判断合同本身是否出现异常。
 - 单双引号均可表示字符串
+- Solidity使用将string类型转换为bytes类型来获取它的长度，因为通常的string.length低效且昂贵。
+    ```
+    bytes string1ToBytes = bytes(string1);
+    string1ToBytes.length;
+    ```
+- Solidity函数的状态可变性
+    - view函数：保证该函数不会修改状态，以下行为被视为修改了状态：
+        1. 修改状态变量
+        2. 产生事件（？？？）
+        3. 创建其它合约
+        4. 使用selfdestruct（自毁函数，用于销毁区块链上的合约系统。合约账户上剩余的以太币会发送给指定目标然后其储存和代码从状态中被移除）
+        5. 通过调用发送以太币
+        6. 调用任何没有被标记为view或pure的函数
+        7. 使用低级调用（address.call）
+        8. 使用包含某些操作码的内联汇编（Solidity支持的所有操作码请看[这里](https://docs.soliditylang.org/en/v0.8.19/yul.html#evm-dialect)）
+    - pure函数：保证该函数既不读取也不修改状态，以下行为被视为读取了状态：
+        1. 读取状态变量
+        2. 访问this.balance或\<address\>.balance（？？？）
+        3. 访问block，tx，msg中任意成员，msg.sig和msg.data除外（？？？）
+        4. 调用任何未标记为pure的函数
+        5. 使用包含某些操作码的内联汇编
 

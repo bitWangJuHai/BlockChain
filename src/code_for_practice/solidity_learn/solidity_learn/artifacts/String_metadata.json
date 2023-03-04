@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_new",
+						"type": "string"
+					}
+				],
+				"name": "changeFavoriteColor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStringLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showFavoriteColor",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"String.sol": "String"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"String.sol": {
+			"keccak256": "0x63d05dd54a7ef01e22a9255efc9c2c086d4d8236ab5f7d6d3c260d4d1d66def4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://cf0e2edc56d949b5e9e201d5438b1f16d48bc27d95d25e3e7ac90c87b846a237",
+				"dweb:/ipfs/QmekFf2pyVmzjWx6KE2vw9DLtiuAA2HmAuka6NXGCeZnPt"
+			]
+		}
+	},
+	"version": 1
+}
