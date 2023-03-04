@@ -60,4 +60,9 @@
     - 最终代码包括所有public和external函数以及所有可以通过public函数访问到的代码
     - 最终代码不包括构造函数或者只被构造函数调用的内internal函数
     - 构造函数可以是public也可以是interal
+- 数组操作
+    - array.push(number)：向array结尾添加一个元素number，返回数组的新长度
+    - array.pop()：移除数组最后一个元素，返回被移除的数
+    - array.length：返回数组长度
+    - delete array[i]：将数组i下标的元素重置为默认值（delete删除不会影响数组长度）
 

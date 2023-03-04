@@ -1,0 +1,52 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "setSmall",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/enums.sol": "enumsLearn"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/enums.sol": {
+			"keccak256": "0x4649faf60679f9fe38067aa8f386e5121f77a75a8fce2223d3dd83617631bae4",
+			"urls": [
+				"bzz-raw://3357a02d59547884ce268bd0917778c48ad1291c81e27cf591a74551d495f479",
+				"dweb:/ipfs/QmTC9U3qvci69xFefVPRgyxRGcGJc4zt7aPyeokt4Qy5vT"
+			]
+		}
+	},
+	"version": 1
+}
