@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "test",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/ether-uints.sol": "learnEtherUints"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/ether-uints.sol": {
+			"keccak256": "0xf360c1caacba7059d12b38bb82b098dfb480be52e327806443fc79b88b915874",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e17720cf77897317fd2c9078a6ea660a38b611a2d23e94dfa5ce1ced38e6d30e",
+				"dweb:/ipfs/QmRvP2PUt3p5jaeSHPMtLpjCzeTMvpesEEKwkfRHyPWJYL"
+			]
+		}
+	},
+	"version": 1
+}

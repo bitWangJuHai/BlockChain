@@ -65,4 +65,13 @@
     - array.pop()：移除数组最后一个元素，返回被移除的数
     - array.length：返回数组长度
     - delete array[i]：将数组i下标的元素重置为默认值（delete删除不会影响数组长度）
-
+    - 特殊数组[bytes&string](https://docs.soliditylang.org/en/v0.8.19/types.html#bytes-and-string-as-arrays)
+- msg.sender：该全局参数表示消息的发送者，或者说是执行这个合约/函数的用户（地址）
+- uint类型
+    - 无符号整数
+    - uint默认uint256
+    - 32位转换成16位时舍掉（数字的）高位，16位转换成32位时放在其低位。
+- byte类型
+    - [Fixed-size byte arrays&Dynamically-sized byte array](https://docs.soliditylang.org/en/v0.8.19/types.html#fixed-size-byte-arrays)
+    - 当长字节转换成短字节时舍掉高位（数字的低位），短字节转换成长字节是高位补0
+- solidity提供了很多[全局变量及常量](https://docs.soliditylang.org/en/v0.8.19/units-and-global-variables.html#units-and-globally-available-variables)。例如ether、wei、gwei(1e9)、second、minutes、weeks、msg.sender、block.number
