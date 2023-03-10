@@ -1,0 +1,64 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getA",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/test.sol": "test"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/test.sol": {
+			"keccak256": "0x2b6e7db66c29811f048d0209f5398691590391427a9434121828281757323a1a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://10a2025af792959538fbf381bb6c852458b0667485a3539ff837aedd425d0b5d",
+				"dweb:/ipfs/QmPFTrUq6mQNxcDQ7LhNWD5JQdZYa65csLoJNeGxjpsZfL"
+			]
+		}
+	},
+	"version": 1
+}
