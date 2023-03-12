@@ -7,20 +7,9 @@
 		"abi": [
 			{
 				"inputs": [],
+				"name": "updatesBalance",
+				"outputs": [],
 				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "exercise",
-				"outputs": [
-					{
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
-					}
-				],
-				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -37,7 +26,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/test.sol": "test"
+			"solidity_learn/special-variables.sol": "Updated"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -51,12 +40,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/test.sol": {
-			"keccak256": "0x25109c0031d9ba1ca458f28c344d5f5187a616dbb05e659d7465f183ea0669d4",
+		"solidity_learn/special-variables.sol": {
+			"keccak256": "0x16ddc7da0d8ede2c18075c903972224626ec21bd774d5e28248e551968aa8f11",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://67038d89398c46e91e5788a432006c0d6085652489bffcf5553ba2eaa962ba21",
-				"dweb:/ipfs/QmP2bGTjZabEpvnzT6uDTtLuvBN8Bm4L8kG3Do4h8Mqqqu"
+				"bzz-raw://c2bb315a32531a613b6e88d31de3dd4bddf3f83ae00077d0006393bbed153dc4",
+				"dweb:/ipfs/QmTHsUqszyxqWV2k3x9VNvin9V8Hs51fNUCJ41EFjDEcEA"
 			]
 		}
 	},

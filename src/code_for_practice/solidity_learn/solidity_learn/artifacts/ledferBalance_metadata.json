@@ -6,21 +6,16 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
-			},
-			{
-				"inputs": [],
-				"name": "exercise",
-				"outputs": [
+				"inputs": [
 					{
-						"internalType": "bytes",
-						"name": "",
-						"type": "bytes"
+						"internalType": "uint256",
+						"name": "newBalance",
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"name": "updatesBalance",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -37,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/test.sol": "test"
+			"solidity_learn/special-variables.sol": "ledferBalance"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -51,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/test.sol": {
-			"keccak256": "0x25109c0031d9ba1ca458f28c344d5f5187a616dbb05e659d7465f183ea0669d4",
+		"solidity_learn/special-variables.sol": {
+			"keccak256": "0x862567c4d1de69ecc216734be7263e557d10bbec1360329c1663cff037600ced",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://67038d89398c46e91e5788a432006c0d6085652489bffcf5553ba2eaa962ba21",
-				"dweb:/ipfs/QmP2bGTjZabEpvnzT6uDTtLuvBN8Bm4L8kG3Do4h8Mqqqu"
+				"bzz-raw://680812ee0220311c554c7784fc3c262c3c4e524a35dcb710989edf04d053220b",
+				"dweb:/ipfs/QmdamzCm2as54yGMbFsYEMcDCVZCYyBSKzsWkxE4qt8zsP"
 			]
 		}
 	},

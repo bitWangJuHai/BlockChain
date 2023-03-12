@@ -2,14 +2,20 @@
 pragma solidity >= 0.7.0 < 0.9.0;
 contract test {
     uint16 a;
+    bytes payload;
 
     constructor() {}
 
-    function getA() pure public returns(uint16){
+    function exercise() pure public returns (bytes memory) {
         // unchecked{ 
         //     return type(uint16).max + type(uint8).max;
         // }
-        return exp(10,3);
+        
+        assert(1 minutes == 60 seconds);
+        assert(24 hours == 1 days);
+
+        return abi.encodeWithSignature("hahah(string1)", "Name1");
+
     }
 
 }

@@ -75,4 +75,7 @@
     - [Fixed-size byte arrays&Dynamically-sized byte array](https://docs.soliditylang.org/en/v0.8.19/types.html#fixed-size-byte-arrays)
     - 当长字节转换成短字节时舍掉高位（数字的低位），短字节转换成长字节是高位补0
 - solidity提供了很多[全局变量及常量](https://docs.soliditylang.org/en/v0.8.19/units-and-global-variables.html#units-and-globally-available-variables)。例如ether、wei、gwei(1e9)、second、minutes、weeks、msg.sender、block.number
-- msg.sender/tx.origin/block.coinbase都是address payable类型
+- msg.sender/tx.origin/block.coinbase都是address payable类型，this可以被显示地转换为address或address payable类型
+- 通常会使用x.f()调用合约对象x中的f方法。不推荐使用底层的call，delegatecall，staticcall除非万不得已，因为可能存在安全隐患。
+- 不推荐在合约代码中硬编码使用的gas值
+- 获得当前合约的余额：`address(this).balance`

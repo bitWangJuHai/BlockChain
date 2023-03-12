@@ -39,7 +39,7 @@ import * as symbolName from "filename"
 - int、uint有256位
 - 使用`type(X).min`或`type(X).max`获得类型X的最小/大值
 - 整数计算默认进行checked溢出检测，溢出则报错并revert事务。可以使用`uncheck{ …… }`不对结果进行溢出检测
-- 使用x*x*x比x**3更便宜
+- 使用x\*x\*x比x**3更便宜
 #### Address
 - address类型地址只能发送以太币而不能接受以太币，接受以太币使用address payable类型。address类型只能显示地转换成address payable类型，address payable类型可以隐式地转换为address类型。
 - address类型的成员
@@ -59,6 +59,20 @@ import * as symbolName from "filename"
     &emsp;&emsp;向address发送amount数量的wei并附带2300gas。如果x是合约地址那么该合约会被执行，执行失败会返回false并不throw
     - call
         ```
-        <address>.call() returns(bool)
+        <address>.call(bytes memory) returns(bool, bytes memeory)
         ```
-    &emsp;&emsp;以address的身份调用address内的函数，默认传送所有可用gas，执行失败返回false
+    &emsp;&emsp;以address的身份调用address内的函数，调用函数时使用其abi二进制编码。默认传送所有可用gas，返回执行是否成功以及返回值的abi二进制编码。调用时还可以指定gas数量和转账数量，例如`msg.sender.call{gas:100000000, value: 1 ether}(abi.encodeWithSignature("register(string)", "MyName"));`
+    - delegatecall
+    使用方法和call相同，但在调用时仅仅使用被调用函数的代码，调用的环境还是当前合约（存储，账户金额等）。该方法的目的是使用存储在其它合约中的库函数代码。仅可指定gas，value不可用。
+    - staticcall
+    使用方法和call相同，但会在被调用的函数试图修改状态变量是revert。仅可指定gas，value不可用。
+    - code：获取目标合约的bytes memory类型的字节码
+    - codehash：获取字节码的bytes32类型的Keccak-256哈希值，比直接使用Keccak256(addr.code)更cheap
+#### Contract Type
+- 
+## Contract
+### Function Modifiers
+- 函数Modififers可以改变函数的行为，例如可以在函数执行之前执行自动检查，符合条件才可运行该函数。
+- Modifier是可继承的
+## Cheatsheet
+### Global Variables
