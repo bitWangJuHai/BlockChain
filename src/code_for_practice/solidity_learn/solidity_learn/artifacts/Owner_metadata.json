@@ -4,7 +4,13 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +39,11 @@
 	},
 	"sources": {
 		"solidity_learn/function-modifiers.sol": {
-			"keccak256": "0x2109144c46df2ee5434bc7750ed313f6ea4c67824245b490c19fcf1052908845",
+			"keccak256": "0xfcb6e4fdb1a0242fdf3875b87be5765b7a0d57c07c0a9406a6de17ce25b70dd2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d76e022ba1476bc4a280ced0ce76ed51a106267a87b9f4ceaada2f67fb52db4e",
-				"dweb:/ipfs/QmZtoezTHuoTRsZX964Nsg3L8MemRbqYw3hxCBS8S7HLxc"
+				"bzz-raw://1b7ecc89b55d2cc06352c954ea5cf52dc228289af0db2f96f203d37dd0a9a82c",
+				"dweb:/ipfs/QmevD3QWB7MwWbHCrYjT9GJWhzL4PpkMKdCi3uZFGmvYD5"
 			]
 		}
 	},

@@ -6,42 +6,9 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "initialPrice",
-						"type": "uint256"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_price",
-						"type": "uint256"
-					}
-				],
-				"name": "changePrice",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "destory",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "register",
-				"outputs": [],
-				"stateMutability": "payable",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -57,7 +24,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/function-modifiers.sol": "Register"
+			"solidity_learn/function-modifiers.sol": "owned"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

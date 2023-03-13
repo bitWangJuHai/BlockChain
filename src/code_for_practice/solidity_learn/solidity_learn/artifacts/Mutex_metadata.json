@@ -6,41 +6,48 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
+				"inputs": [],
+				"name": "a",
+				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "initialPrice",
+						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
-				"type": "constructor"
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "_price",
+						"name": "_num",
 						"type": "uint256"
 					}
 				],
-				"name": "changePrice",
-				"outputs": [],
+				"name": "f",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "destory",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "register",
-				"outputs": [],
-				"stateMutability": "payable",
+				"name": "locked",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -57,7 +64,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/function-modifiers.sol": "Register"
+			"solidity_learn/function-modifiers.sol": "Mutex"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

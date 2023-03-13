@@ -79,3 +79,8 @@
 - 通常会使用x.f()调用合约对象x中的f方法。不推荐使用底层的call，delegatecall，staticcall除非万不得已，因为可能存在安全隐患。
 - 不推荐在合约代码中硬编码使用的gas值
 - 获得当前合约的余额：`address(this).balance`
+- 一个Warning
+  ```
+  Unnamed return variable can remain unassigned. Add an explicit return with value to all non-reverting code paths or name the variable
+  ```
+  0.7.4版本以上的编译器不会检测程序是否会到达函数的return语句（函数尾）所以要对返回值进行定义以保证函数有一个默认的返回值
