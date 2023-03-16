@@ -7,28 +7,15 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "multiply",
+				"name": "info",
 				"outputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "ret",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "valuePlusThree",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "nonpayable",
+				"stateMutability": "payable",
 				"type": "function"
 			}
 		],
@@ -45,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/view-pure-constant-modifiers.sol": "Practice"
+			"solidity_learn/external_function_call.sol": "InfoFeed"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -59,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/view-pure-constant-modifiers.sol": {
-			"keccak256": "0xbb2739b0e9d0e5d8f40d364348da5409c5f0aa515eda0dc8b2783598f8723c06",
+		"solidity_learn/external_function_call.sol": {
+			"keccak256": "0x8bad01c1aaa5b3b73edbe1b7ed471782095ece07b9495fb6a643d940a16ea248",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://dc896957fe8cfd349f8d29f030531a2bd752d7a84aed8e356ca50f814444009a",
-				"dweb:/ipfs/QmWCua63DyS22ZSb4BuUqR7X2zfxah4ZhYzSRtxBZd17ZF"
+				"bzz-raw://dbf9ad283773588f2284095fc127ce4ce646448079b37aa080e73eedfa7192fc",
+				"dweb:/ipfs/QmPmMGCb6WPKDkW2GCiA83JM2t22u4eMDaCfLNtGndT84K"
 			]
 		}
 	},

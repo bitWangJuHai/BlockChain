@@ -7,7 +7,7 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "multiply",
+				"name": "getValue",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -15,19 +15,19 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "valuePlusThree",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "_value",
 						"type": "uint256"
 					}
 				],
+				"name": "setValue",
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -45,7 +45,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/view-pure-constant-modifiers.sol": "Practice"
+			"solidity_learn/view-pure-constant-modifiers.sol": "MyContract"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

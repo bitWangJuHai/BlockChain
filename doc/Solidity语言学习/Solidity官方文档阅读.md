@@ -69,7 +69,14 @@ import * as symbolName from "filename"
     - code：获取目标合约的bytes memory类型的字节码
     - codehash：获取字节码的bytes32类型的Keccak-256哈希值，比直接使用Keccak256(addr.code)更cheap
 #### Contract Type
-- 
+
+## Expressions Control Structures
+### Function Calls
+#### External Function Calls
+- 调用函数使用`this.g(8)`（当前合约的g函数）或`c.g(2)`（合约对象c的g函数），调用类型是外部调用。
+- 构造函数中不能使用`this`因为合约还未被创造
+- 可以用{value: 10, gas: 10000}在括号前指定发送的ether及汽油费
+- 调用其它合约中的函数时要小心谨慎因为无法预测其行为。先修改状态变量再发起转账可以避免重入攻击。
 ## Contract
 ### Function Modifiers
 - 函数修饰符可以改变函数的行为，例如可以在函数执行之前执行自动检查，符合条件才可运行该函数。
@@ -84,5 +91,16 @@ import * as symbolName from "filename"
 - 修饰符中定义（引入）的符号对函数不可见
 - 修饰符的实际参数可以是任意表达式，所有函数可见的符号都可以作为修饰符的参数，包括函数参数及返回值，但是返回值在`_;`之后才被赋值。目前没找到在修饰符中获取到函数目标返回值的方法（只能获取到定义返回值时的默认值……）
 - 在modifier中可以使用不带参数的return来显式结束modifier，只要函数体被执行过就不会影响到函数的实际返回值。
+### Function
+#### Special Function
+- Receive Ether Function
+- Fallback Function
+    ```
+    fallback(bytes calldata input) [payable] external returns(bytes memory output)
+    ```
+    - 调用时机：调用合约时没有函数和给定的函数匹配（名称一样&&参数一样）；当合约意外收到以太时，此时若fallback函数不存在或未声明为payable则会报错并返还以太
+    - 回调函数必需声明为external多数情况下要声明为payable。
+    - 如果使用了参数`input`则input包含发给这个合约的用abi编码的所有数据，可以用abi.decode来解码，详见[fallback官方文档](https://docs.soliditylang.org/en/v0.8.19/contracts.html#fallback-function)
+    - 回调函数可能只会被分配到很少的gas（2300）
 ## Cheatsheet
 ### Global Variables
