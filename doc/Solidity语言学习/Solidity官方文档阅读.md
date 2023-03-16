@@ -102,5 +102,28 @@ import * as symbolName from "filename"
     - 回调函数必需声明为external多数情况下要声明为payable。
     - 如果使用了参数`input`则input包含发给这个合约的用abi编码的所有数据，可以用abi.decode来解码，详见[fallback官方文档](https://docs.soliditylang.org/en/v0.8.19/contracts.html#fallback-function)
     - 回调函数可能只会被分配到很少的gas（2300）
+#### Function Overloading
+- 一个合约可以有多个函数名相同但参数不同的多个函数
+- 同名函数的不同参数必须是外部类型不同的参数，比如合约类型和address类型虽然内部类型不同但是外部类型都是地址，例如下列代码无法通过编译
+    ```
+    // SPDX-License-Identifier: GPL-3.0
+    pragma solidity >=0.4.16 <0.9.0;
+
+    // This will not compile
+    contract A {
+        function f(B value) public pure returns (B out) {
+            out = value;
+        }
+
+        function f(address value) public pure returns (address out) {
+            out = value;
+        }
+    }
+
+    contract B {
+    }
+    ```
+- 重载时不考虑返回值
+- 重载时实际参数能被隐式转换成哪个函数的形式参数就调用哪个函数，如果实际参数能同时被隐式转换成两个函数的形式参数则会报错。比如f(50)能同时被隐式转换成uint8、uint256。f(256)只能被隐式转换成uint256而不能转换成uint8。
 ## Cheatsheet
 ### Global Variables

@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/function_overloading.sol": "B"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/function_overloading.sol": {
+			"keccak256": "0x2ecc8d64e1b727629c1addb0f33894be94f0d20d2baebb2c09ce09348356bb55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3d5fbceb8f44e2cc31a2962aeb37a046ef00568f5813ae9faf1e84343829aee1",
+				"dweb:/ipfs/QmVFLXFXct7T23uDG1VyfYFyqMFd5q3YLPsyiGpxYNXoH1"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,65 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "range",
+						"type": "uint256"
+					}
+				],
+				"name": "randMod",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/cryptographic-function.sol": "GenerateRandomNumber"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/cryptographic-function.sol": {
+			"keccak256": "0xb35fd09c0a8524bcf44c8591a56e6df5a132748e039717ca9523be36a5c82af5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d7a5b1860beede775028ac3d5f92abdb9bdad88ddaa9826ca4a1575a23501e93",
+				"dweb:/ipfs/QmSh3ZtHKBEJMP5JVAbAqMWrpgKCZTirNjgHxpB7fABgpx"
+			]
+		}
+	},
+	"version": 1
+}

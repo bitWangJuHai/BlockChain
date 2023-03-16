@@ -1,0 +1,84 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "f",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "out",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "value",
+						"type": "address"
+					}
+				],
+				"name": "f",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "out",
+						"type": "address"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/function_overloading.sol": "A"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/function_overloading.sol": {
+			"keccak256": "0x2ecc8d64e1b727629c1addb0f33894be94f0d20d2baebb2c09ce09348356bb55",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3d5fbceb8f44e2cc31a2962aeb37a046ef00568f5813ae9faf1e84343829aee1",
+				"dweb:/ipfs/QmVFLXFXct7T23uDG1VyfYFyqMFd5q3YLPsyiGpxYNXoH1"
+			]
+		}
+	},
+	"version": 1
+}

@@ -92,3 +92,8 @@
 - fabllback和receive函数的调用条件
     收到以太币-->msg.data为空？否-->fallback():是-->receive()存在?否fallback():是-->receive()  
     mag.data不为空说明消息发送者是要调用点儿什么东西而不是简单的转账，调用者想要转账但是没定义receive()没办法只能调用fallback了。
+- solidity中的密码学函数
+    - sha256(bytes memory) returns (bytes32)
+    - keccak256(bytes memory) returns (bytes32)
+    - ripemd160(bytes memory) returns (bytes20)
+    - blockhash(uint blockNumber) returns (bytes32)
