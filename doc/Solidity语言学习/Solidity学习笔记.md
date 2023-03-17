@@ -23,7 +23,7 @@
     require(condition, "something bad happened")    //一旦条件不成立则撤销交易所有的状态更改，返回指定的异常信息，将剩余的gas退还给调用者
     assert(condition)               //一旦条件不成立则撤销交易所有的状态更改，消耗掉所有的gas
     ```
-&emsp;&emsp;注：assert应该用于程序错误的检测比如溢出，避免“永远无法发生”的情况发生。revert和require用于判断某些行为是否违反了合同，assert用于判断合同本身是否出现异常。
+&emsp;&emsp;注：assert应该用于程序错误的检测比如溢出，避免“永远无法发生”的情况发生。revert和require用于判断某些行为是否违反了合同，assert用于判断合同本身是否出现异常。`require`常用于检测函数输入，执行之前的条件判断，检测函数的返回值是否符合预期等；`revert`是无条件抛出异常用于异常条件比较复杂的情况。
 - 单双引号均可表示字符串
 - Solidity使用将string类型转换为bytes类型来获取它的长度，因为通常的string.length低效且昂贵。
     ```
@@ -41,11 +41,11 @@
         7. 使用低级调用（address.call）
         8. 使用包含某些操作码的内联汇编（Solidity支持的所有操作码请看[这里](https://docs.soliditylang.org/en/v0.8.19/yul.html#evm-dialect)）
     - pure函数：保证该函数既不读取也不修改状态，以下行为被视为读取了状态：
-        1. 读取状态变量
-        2. 访问this.balance或\<address\>.balance（？？？）
-        3. 访问block，tx，msg中任意成员，msg.sig和msg.data除外（？？？）
-        4. 调用任何未标记为pure的函数
-        5. 使用包含某些操作码的内联汇编
+        9. 读取状态变量
+        10. 访问this.balance或\<address\>.balance（？？？）
+        11. 访问block，tx，msg中任意成员，msg.sig和msg.data除外（？？？）
+        12. 调用任何未标记为pure的函数
+        13. 使用包含某些操作码的内联汇编
 - Solidity合约中的构造函数
     - 构造函数定义语法
         ```
@@ -60,12 +60,13 @@
     - 最终代码包括所有public和external函数以及所有可以通过public函数访问到的代码
     - 最终代码不包括构造函数或者只被构造函数调用的内internal函数
     - 构造函数可以是public也可以是interal
-- 数组操作
+- 数组
     - array.push(number)：向array结尾添加一个元素number，返回数组的新长度
-    - array.pop()：移除数组最后一个元素，返回被移除的数
+    - array.pop()：移除数组最后一个元素，数组长度-1，返回被移除的数
     - array.length：返回数组长度
     - delete array[i]：将数组i下标的元素重置为默认值（delete删除不会影响数组长度）
     - 特殊数组[bytes&string](https://docs.soliditylang.org/en/v0.8.19/types.html#bytes-and-string-as-arrays)
+    - 使用`uint[] memory a = new uint[](5)`在memory中创建一个新数组
 - msg.sender：该全局参数表示消息的发送者，或者说是执行这个合约/函数的用户（地址）
 - uint类型
     - 无符号整数
@@ -97,3 +98,29 @@
     - keccak256(bytes memory) returns (bytes32)
     - ripemd160(bytes memory) returns (bytes20)
     - blockhash(uint blockNumber) returns (bytes32)
+    - ecrecover(byts32 hash, uint8 v, bytes32 r, bytes32 s) returns (address)
+- 关于`ecrecover`
+&emsp;&emsp;ecrecover是solidity提供的全局函数用于校验以太坊签名数据。以太坊使用椭圆曲线签名算法对添加`\x19Ethereum Signed Message:\n消息长度`前缀的数据哈希的哈希进行签名，添加前缀的目的是防止DApp将用户要签名的一般消息篡改为转账等恶意操作，添加前缀后若篡改为交易。我们使用ecrecover来校验签名，若校验成功则返回签名者的公钥地址，失败则返回0。其中hash是待验证数据的hash，r是签名的前32个字节、s是签名的次32个字节、v是签名的最后一个字节。 
+- constants标注不可修改的常量，immutable标注只能在构造器中初始化一次的量
+- 读取状态变量不需要发送交易，修改状态变量需要发送交易
+- `map[index]`若index未被设定则返回默认值
+- 枚举和结构可以在contract之外定义，所以可以单独创建一个定义枚举的sol文件然后在其他文件中import
+- `delete enum1`删除枚举变量，将其重新设置为默认值0
+- map不能作为函数的输入输出，数组可以作为函数的输入输出
+- 可以以键值对的形式调用函数，如下代码
+    ```
+    function aaa(
+        uint x,
+        uint y,
+        address a,
+        bool b,
+        string memory c
+    ) public pure returns(uint){}
+    function callAaa() public pure returns(uint){
+        return aaa({a: address(0), b: true, x: 1, c: "sssss", y: 2});
+    }
+    ```
+- Solidity大版本更新都会引入breaking change，也就是不向前兼容。在编写solidity时必须告诉编译器该合约使用的是哪个版本的solidity以便该合约可以长时间运行在以太坊虚拟机上而不会因版本变化无法被他人调用。截至2023年2月最新版本是0.8.18，当前的版本信息详见[官方文档](https://docs.soliditylang.org/en/v0.8.18/)。
+    ```
+    pragma solidity >= 0.7.0 < 0.9.0;       //为编译器指定程序使用的solidity语言版本
+    ```

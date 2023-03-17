@@ -1,0 +1,85 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_new",
+						"type": "string"
+					}
+				],
+				"name": "changeFavoriteColor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getStringLength",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "showFavoriteColor",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solidity_learn/String.sol": "String"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solidity_learn/String.sol": {
+			"keccak256": "0x4721ec9f85c7b698a1498da7686165baeb0d49c5eb57a24f2d2abc0175e2f7a5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://42993c30a750764fad76d855dd1cb71294d8e7eeb4ec3151bef9f9f3f2400a1d",
+				"dweb:/ipfs/QmcRyrnThfNW4yqjCxFgxsEHn5iENwWZWRVmUrMqBavCW7"
+			]
+		}
+	},
+	"version": 1
+}

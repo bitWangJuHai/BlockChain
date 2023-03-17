@@ -9,18 +9,28 @@
 				"inputs": [
 					{
 						"internalType": "string",
-						"name": "_new",
+						"name": "_title",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_director",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_movie_id",
+						"type": "uint256"
 					}
 				],
-				"name": "changeFavoriteColor",
+				"name": "create",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
 				"inputs": [],
-				"name": "getStringLength",
+				"name": "getMovieId",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -32,16 +42,39 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "showFavoriteColor",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "movies",
 				"outputs": [
 					{
 						"internalType": "string",
-						"name": "",
+						"name": "title",
 						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "director",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "movie_id",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "setMovie",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -58,7 +91,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"String.sol": "String"
+			"solidity_learn/Struct.sol": "learnStructs"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -72,12 +105,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"String.sol": {
-			"keccak256": "0x63d05dd54a7ef01e22a9255efc9c2c086d4d8236ab5f7d6d3c260d4d1d66def4",
+		"solidity_learn/Struct.sol": {
+			"keccak256": "0xe311b7c6b3daf52c09f22388aae84e3f30e703615035217e056c6860f4c92195",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://cf0e2edc56d949b5e9e201d5438b1f16d48bc27d95d25e3e7ac90c87b846a237",
-				"dweb:/ipfs/QmekFf2pyVmzjWx6KE2vw9DLtiuAA2HmAuka6NXGCeZnPt"
+				"bzz-raw://ee08895e8dabc6bde66cd6544b2ce976327d4ca6ed13e1f87610234630468d1b",
+				"dweb:/ipfs/QmUw6XT3kmyk33spe1M7C4NgvzuhBL7wxmy4LCkkwN73qQ"
 			]
 		}
 	},

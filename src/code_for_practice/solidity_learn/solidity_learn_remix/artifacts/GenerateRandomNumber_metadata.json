@@ -1,10 +1,21 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_oracle",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
 			{
 				"inputs": [
 					{
@@ -40,7 +51,7 @@
 		"compilationTarget": {
 			"solidity_learn/cryptographic-function.sol": "GenerateRandomNumber"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -53,11 +64,11 @@
 	},
 	"sources": {
 		"solidity_learn/cryptographic-function.sol": {
-			"keccak256": "0xb35fd09c0a8524bcf44c8591a56e6df5a132748e039717ca9523be36a5c82af5",
+			"keccak256": "0xb5832b74fa02e3f10a9c73e2deda0e45d8d0bcf26c4efb67c448fd4c4b9c5f11",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d7a5b1860beede775028ac3d5f92abdb9bdad88ddaa9826ca4a1575a23501e93",
-				"dweb:/ipfs/QmSh3ZtHKBEJMP5JVAbAqMWrpgKCZTirNjgHxpB7fABgpx"
+				"bzz-raw://f3fc221f98ccfcba1215941802009397fc034a5f1e09f1467dd138673270e469",
+				"dweb:/ipfs/QmYHBvN4QtMcRQ5RPaEuwuaYs8Fp2P6pVB8EcmmJDsK772"
 			]
 		}
 	},
