@@ -18,7 +18,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/events.sol": "Event"
+			"src/code_for_practice/solidity_learn/solidity_learn_remix/events.sol": "Event"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -32,12 +32,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/events.sol": {
-			"keccak256": "0xa63c5af15f06e56f1f178456b779fec456eac5d1305c10ba2436605320c2a6c5",
+		"src/code_for_practice/solidity_learn/solidity_learn_remix/events.sol": {
+			"keccak256": "0x077db3f464a0e6a260ebd392f346a7f649de12a93a2d6ab034f73f35a6ac7f53",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fc82bd366b9adcb3dc9d1e12b5384d5a2c5e77c93759f9d5bbb611b6c2af281d",
-				"dweb:/ipfs/QmXJscy8idgbhQUam34yeRX2b7GirBD2UxoDHrEZLRR95M"
+				"bzz-raw://18e791da156ee6e9a0ab9eea830ecda518f2bb705c5b9ce1a15abe9088875d0a",
+				"dweb:/ipfs/QmPknNHjWW9rqm3LFTQ5Ex8Abuhc3o4n6PXZn2APwh9zzM"
 			]
 		}
 	},
