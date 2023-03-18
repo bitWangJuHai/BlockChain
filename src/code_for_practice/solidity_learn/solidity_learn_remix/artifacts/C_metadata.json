@@ -32,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/inheritance.sol": "A"
+			"solidity_learn_remix/inheritance.sol": "C"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

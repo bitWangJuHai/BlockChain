@@ -1,10 +1,24 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "foo",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -18,9 +32,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/function_overloading.sol": "B"
+			"solidity_learn_remix/inheritance.sol": "B"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -32,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/function_overloading.sol": {
-			"keccak256": "0x2ecc8d64e1b727629c1addb0f33894be94f0d20d2baebb2c09ce09348356bb55",
+		"solidity_learn_remix/inheritance.sol": {
+			"keccak256": "0x9501174ee6563ec1aa760050c4e1e61557950c762de993a72008e86dec7b880e",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3d5fbceb8f44e2cc31a2962aeb37a046ef00568f5813ae9faf1e84343829aee1",
-				"dweb:/ipfs/QmVFLXFXct7T23uDG1VyfYFyqMFd5q3YLPsyiGpxYNXoH1"
+				"bzz-raw://b5def103baadd0b95c7c1754ccc8b50fac5de0db163ef25808705f88e371abf2",
+				"dweb:/ipfs/QmZbV4pYG7pvNBNPmB317KEPBCRuMyyyohFQbx9hFxJEe8"
 			]
 		}
 	},
