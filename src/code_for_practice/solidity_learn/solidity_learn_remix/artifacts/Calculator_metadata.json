@@ -7,15 +7,15 @@
 		"abi": [
 			{
 				"inputs": [],
-				"name": "foo",
+				"name": "getResult",
 				"outputs": [
 					{
-						"internalType": "string",
+						"internalType": "uint256",
 						"name": "",
-						"type": "string"
+						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -32,7 +32,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/inheritance.sol": "A"
+			"solidity_learn_remix/interface.sol": "Calculator"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -46,12 +46,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn_remix/inheritance.sol": {
-			"keccak256": "0x27c49239796b46f43063fbacee7f11ccfee8378388a99d07240e34d1f16572a8",
+		"solidity_learn_remix/interface.sol": {
+			"keccak256": "0xf33e5b4f7f879aefe69daed79270cc655f5b897d455ea86957b9009900a289f7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://fb1b394ec32fa5d9b38613a8c51f4d80abad828bf5151545d9d7d3c82b3e4bfd",
-				"dweb:/ipfs/QmQQAGiCUv52NrQ99LviZ7ZcfaX67noLwXFsaqYiicfMHW"
+				"bzz-raw://aa3e0e5d5d2a452f07b40fbabd754c6f9ad998ff8b8633c9dca566ceb1d2226b",
+				"dweb:/ipfs/QmZPVqvJzWfAUbrsTXRCJ25U6PaNRtTagAvQyMeLK5QWn4"
 			]
 		}
 	},

@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.7+commit.e28d00a7"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -12,12 +12,12 @@
 			},
 			{
 				"inputs": [],
-				"name": "exercise",
+				"name": "getResult",
 				"outputs": [
 					{
-						"internalType": "bytes",
+						"internalType": "uint256",
 						"name": "",
-						"type": "bytes"
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "pure",
@@ -37,9 +37,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/test.sol": "test"
+			"solidity_learn_remix/interface.sol": "Test"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -51,12 +51,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/test.sol": {
-			"keccak256": "0x25109c0031d9ba1ca458f28c344d5f5187a616dbb05e659d7465f183ea0669d4",
+		"solidity_learn_remix/interface.sol": {
+			"keccak256": "0xf33e5b4f7f879aefe69daed79270cc655f5b897d455ea86957b9009900a289f7",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://67038d89398c46e91e5788a432006c0d6085652489bffcf5553ba2eaa962ba21",
-				"dweb:/ipfs/QmP2bGTjZabEpvnzT6uDTtLuvBN8Bm4L8kG3Do4h8Mqqqu"
+				"bzz-raw://aa3e0e5d5d2a452f07b40fbabd754c6f9ad998ff8b8633c9dca566ceb1d2226b",
+				"dweb:/ipfs/QmZPVqvJzWfAUbrsTXRCJ25U6PaNRtTagAvQyMeLK5QWn4"
 			]
 		}
 	},

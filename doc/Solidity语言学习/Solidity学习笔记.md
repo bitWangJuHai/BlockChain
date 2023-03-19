@@ -2,8 +2,8 @@
 - Solidity中的数据类型
     - 按访问范围来分：  
     public：不限制可见性  
-    private：只能在当前合约中访问  
-    external：只能在当前合约之外访问  
+    private：只能在定义了这个函数的合约中访问  
+    external：只能在当前合约之外访问，状态变量不能被声明为external类型  
     internal：只能在当前合约及其子合约中访问
     - 按性质来分：  
     Value：在参数传递或赋值时总是值拷贝
@@ -125,5 +125,24 @@
     pragma solidity >= 0.7.0 < 0.9.0;       //为编译器指定程序使用的solidity语言版本
     ```
 - 同一个函数从多个父合约继承时要使用`override(A,B,C……)`关键字对函数进行重写，同时父合约中的相应函数要标记为`virtual`，只有标记为`virtual`的函数才可以重写。
-- 接口中的函数都是隐式虚函数，所以实现接口时必须显示地将其重写。接口可以继承接口，派生的接口是所有接口的组合，实现合约的时候必须实现（重载override）其继承的所有接口
+- 接口（interface）中的函数都是隐式虚函数，所以实现接口时必须显示地将其重写。接口可以继承接口，派生的接口是所有接口的组合，实现合约的时候必须实现（重载override）其继承的所有接口
 - 未实现所有函数的合约必须标记为`abstract contract X {……}`
+- 继承的顺序必需是从基础到派生
+- 继承时可以在子合约的构造函数内重新给状态变量赋值而不能重新声明一个同名状态变量
+    ```
+    contract A {
+        string public name = "Contract A";
+        function getName() public view returns (string memory) {
+            return name;
+        }
+    }
+    contract C is A {
+        constructor() {
+            name = "Contract C";
+        }
+    }
+    ```
+- 因为solidity对多重继承采用C3线性优化所以super可能获取到兄妹而不是父母。例子见[这里](../../src/code_for_practice/solidity_learn/solidity_learn_remix/inheritance-call-parent-contracts.sol)
+- 接口（interface）类型
+  - 定义接口中声明的函数的合约必须继承自相应接口，并且定义时使用`override`对函数进行重载。（接口中的函数都是隐式`virtual`函数）
+  - 使用接口中的函数时需要传入定义该函数的合约的地址，如`MyInterface(_addr).func1()`
