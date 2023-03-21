@@ -77,6 +77,20 @@ import * as symbolName from "filename"
 - 构造函数中不能使用`this`因为合约还未被创造
 - 可以用{value: 10, gas: 10000}在括号前指定发送的ether及汽油费
 - 调用其它合约中的函数时要小心谨慎因为无法预测其行为。先修改状态变量再发起转账可以避免重入攻击。
+### Creating Contracts via new
+- 可以使用`new`关键字在合约中创建一个新的合约。创建的时候可以使用`{value: amount}`指定要发送给合约的金额，但是不能指定gas（因为那并没有什么意义）。
+- 默认情况下新创建的合约的地址由当前合约的地址和一个合约计数器的值计算得来
+- 还可以加入`salt`参数来使用CREATE2操作码创建新合约的地址，这么做的好处是可以预先知道这个合约所在的合约账户的地址，更多内容请看[这里](https://ethereum.stackexchange.com/questions/101336/what-is-the-benefit-of-using-create2-to-create-a-smart-contract)
+### Error handling:Assert,Require,Revert and Exceptions
+#### try/catch
+- `try`关键字后面必需有代表外部函数调用或者创建合约的表达
+- solidity可以catch到几种错误，catch子句如下
+  - `catch Error(string memory reason) { …… }`用于检测`revert`或`require`引起的错误
+  - `catch Panic(uint errorCode) { …… }`用于检测程序错误例如：`assert`抛出的错误，除0，无效的数组访问，算术溢出等
+  - `catch (bytes memory lowLevelData) { …… }`用于检测其它不匹配的错误
+  - `catch { …… }`在不关心错误类型的时候可以用来捕获任何错误
+- 为了捕获任何错误`catch (bytes memory lowLevelData) { …… }`和`catch { …… }`至少要有一个
+- 调用失败的原因可能是多方面的，也可能是因为gas不足
 ## Contract
 ### Function Modifiers
 - 函数修饰符可以改变函数的行为，例如可以在函数执行之前执行自动检查，符合条件才可运行该函数。

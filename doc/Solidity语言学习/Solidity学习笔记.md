@@ -144,3 +144,6 @@
 - 接口（interface）类型
   - 定义接口中声明的函数的合约必须继承自相应接口，并且定义时使用`override`对函数进行重载。（接口中的函数都是隐式`virtual`函数）
   - 使用接口中的函数时需要传入定义该函数的合约的地址，如`MyInterface(_addr).func1()`
+- 手动计算函数选择器`bytes4(keccak256(bytes("func1(address,address,uint256,address)")))`注意bytes内参数之间没有空格，uint要写uint256。
+- 若能获取到合约对象则使用`abi.encodeCall(C1.fun1, (para1, para2))`计算出abi编码避免手动计算出错
+- 使用`Contract1.state1()`来获取Contract1的状态变量，`Contract1.state1`是一个返回值是state1的类型的函数
