@@ -38,6 +38,24 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "address payable",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "transfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "withdraw",
 				"outputs": [],
@@ -73,11 +91,11 @@
 	},
 	"sources": {
 		"solidity_learn_remix/payable.sol": {
-			"keccak256": "0x6680903105fc34fb1028693a18f40b990e57f334c1c22d077c63d1fbebc7035c",
+			"keccak256": "0x5de7ef0a4f8c5331f76ca87fbbc519d6882724c16a2646230691d4da58589b84",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e1664610b6fe836402d081212973924c49f14853e9c0018bdc0e2bd3c5350155",
-				"dweb:/ipfs/QmVg4MmJa2aDLKeiQ6rBCRTuUFaTXDmNTmFMSeBsqSajg1"
+				"bzz-raw://41f58778a009a7c67577786fd330a1a95e7ceff5f7b733df09bd9da498cfc4e2",
+				"dweb:/ipfs/QmXeAgkGrjp3Me7fnf7cR2v88jek35CV5ya7kGGnUJ3n8r"
 			]
 		}
 	},

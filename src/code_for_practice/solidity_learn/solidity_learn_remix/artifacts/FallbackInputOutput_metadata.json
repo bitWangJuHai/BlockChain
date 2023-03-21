@@ -8,28 +8,34 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "_to",
+						"internalType": "address",
+						"name": "_target",
 						"type": "address"
 					}
 				],
-				"name": "callFallBack",
-				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
 				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [],
+				"name": "target",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address payable",
-						"name": "_to",
-						"type": "address"
-					}
-				],
-				"name": "transferToFallBack",
-				"outputs": [],
 				"stateMutability": "payable",
-				"type": "function"
+				"type": "receive"
 			}
 		],
 		"devdoc": {
@@ -45,7 +51,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/fallback.sol": "SendToFallBack"
+			"solidity_learn_remix/fallback.sol": "FallbackInputOutput"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

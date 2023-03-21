@@ -20,8 +20,27 @@
 			},
 			{
 				"inputs": [],
-				"name": "increment",
-				"outputs": [],
+				"name": "get",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "inc",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			}
@@ -39,7 +58,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/interface.sol": "Counter"
+			"solidity_learn_remix/fallback.sol": "Counter"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -53,12 +72,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn_remix/interface.sol": {
-			"keccak256": "0x17064f05cc669ba3e473e13786274a984d342f7f5625a7f513c474b8868854f5",
+		"solidity_learn_remix/fallback.sol": {
+			"keccak256": "0xb3b72e3943f61d4a6a745c08832035353ddceb0a6008d01aac8f6ac6f0bd5679",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1ed997e61722a5525f7b6306dede691c139c1919bb9674fb96ac206d5b8c0b88",
-				"dweb:/ipfs/QmVF9JNUxTez6heCwNrDF7gYdvqM75xQXaLxN1yvBDpq1B"
+				"bzz-raw://966bb71fa9a69e3e810a6ab0bd131eb6453e7d6c6b7bec2737004a72843a3975",
+				"dweb:/ipfs/QmPvLVZ1YhmyEkZAso6AKPfahZq2Jec45uL5d6nJianfA8"
 			]
 		}
 	},

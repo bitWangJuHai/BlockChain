@@ -77,7 +77,7 @@
     - 当长字节转换成短字节时舍掉高位（数字的低位），短字节转换成长字节是高位补0
 - solidity提供了很多[全局变量及常量](https://docs.soliditylang.org/en/v0.8.19/units-and-global-variables.html#units-and-globally-available-variables)。例如ether、wei、gwei(1e9)、second、minutes、weeks、msg.sender、block.number
 - msg.sender/tx.origin/block.coinbase都是address payable类型，this可以被显示地转换为address或address payable类型
-- 通常会使用x.f()调用合约对象x中的f方法。不推荐使用底层的call，delegatecall，staticcall除非万不得已，因为可能存在安全隐患并且使用call时会报告一个安全警告。
+- 通常会使用x.f()调用合约对象x中的f方法。不推荐使用底层的call，delegatecall，staticcall除非万不得已，因为可能存在安全隐患并且使用call时会报告一个安全警告。但是推荐使用call调用合约中的fallback函数
 - 不推荐在合约代码中硬编码使用的gas值
 - 获得当前合约的余额：`address(this).balance`
 - 一个Warning
@@ -87,8 +87,6 @@
   0.7.4版本以上的编译器不会检测程序是否会到达函数的return语句（函数尾）所以要对返回值进行定义以保证函数有一个默认的返回值
 - fallback函数
   - 不能命名
-  - 不能接受任何输入
-  - 不能返回任何输出
   - 必需声明为external
 - fabllback和receive函数的调用条件
     收到以太币-->msg.data为空？否-->fallback():是-->receive()存在?否fallback():是-->receive()  

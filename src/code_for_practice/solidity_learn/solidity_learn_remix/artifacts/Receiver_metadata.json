@@ -10,12 +10,24 @@
 				"inputs": [
 					{
 						"indexed": false,
+						"internalType": "address",
+						"name": "caller",
+						"type": "address"
+					},
+					{
+						"indexed": false,
 						"internalType": "uint256",
-						"name": "gas",
+						"name": "amount",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "message",
+						"type": "string"
 					}
 				],
-				"name": "Log",
+				"name": "Received",
 				"type": "event"
 			},
 			{
@@ -23,8 +35,19 @@
 				"type": "fallback"
 			},
 			{
-				"inputs": [],
-				"name": "getBalance",
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_message",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_x",
+						"type": "uint256"
+					}
+				],
+				"name": "foo",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -32,7 +55,7 @@
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"stateMutability": "payable",
 				"type": "function"
 			},
 			{
@@ -53,7 +76,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/fallback.sol": "FallBack"
+			"solidity_learn_remix/call.sol": "Receiver"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -67,12 +90,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn_remix/fallback.sol": {
-			"keccak256": "0xb3b72e3943f61d4a6a745c08832035353ddceb0a6008d01aac8f6ac6f0bd5679",
+		"solidity_learn_remix/call.sol": {
+			"keccak256": "0x508b9926d18adffd7db18c54aa3b4279f3defe75148d20c94b9c96b167ae18ad",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://966bb71fa9a69e3e810a6ab0bd131eb6453e7d6c6b7bec2737004a72843a3975",
-				"dweb:/ipfs/QmPvLVZ1YhmyEkZAso6AKPfahZq2Jec45uL5d6nJianfA8"
+				"bzz-raw://e645519d0a186f961bcfcd452a27d306bd64e626a00a072920e93812d6334eaf",
+				"dweb:/ipfs/QmShEYy1bTvgWbFUfsSmFGQcsMDq5DFqWoBcWXKnESt66P"
 			]
 		}
 	},

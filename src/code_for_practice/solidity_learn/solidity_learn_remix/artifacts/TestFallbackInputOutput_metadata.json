@@ -6,29 +6,52 @@
 	"output": {
 		"abi": [
 			{
+				"anonymous": false,
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "_to",
-						"type": "address"
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "res",
+						"type": "bytes"
 					}
 				],
-				"name": "callFallBack",
-				"outputs": [],
-				"stateMutability": "payable",
+				"name": "Log",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "getTestData",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			},
 			{
 				"inputs": [
 					{
-						"internalType": "address payable",
-						"name": "_to",
+						"internalType": "address",
+						"name": "_fallback",
 						"type": "address"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
 					}
 				],
-				"name": "transferToFallBack",
+				"name": "test",
 				"outputs": [],
-				"stateMutability": "payable",
+				"stateMutability": "nonpayable",
 				"type": "function"
 			}
 		],
@@ -45,7 +68,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn_remix/fallback.sol": "SendToFallBack"
+			"solidity_learn_remix/fallback.sol": "TestFallbackInputOutput"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

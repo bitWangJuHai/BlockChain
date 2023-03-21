@@ -101,7 +101,7 @@ import * as symbolName from "filename"
     - 调用时机：调用合约时没有函数和给定的函数匹配（名称一样&&参数一样）；当合约意外收到以太时，此时若fallback函数不存在或未声明为payable则会报错并返还以太
     - 回调函数必需声明为external多数情况下要声明为payable。
     - 如果使用了参数`input`则input包含发给这个合约的用abi编码的所有数据，可以用abi.decode来解码，详见[fallback官方文档](https://docs.soliditylang.org/en/v0.8.19/contracts.html#fallback-function)
-    - 回调函数可能只会被分配到很少的gas（2300）
+    - 当发送者使用`transfer`或`send`时回调函数可能只会被分配到很少的2300gas
 #### Function Overloading
 - 一个合约可以有多个函数名相同但参数不同的多个函数
 - 同名函数的不同参数必须是外部类型不同的参数，比如合约类型和address类型虽然内部类型不同但是外部类型都是地址，例如下列代码无法通过编译
