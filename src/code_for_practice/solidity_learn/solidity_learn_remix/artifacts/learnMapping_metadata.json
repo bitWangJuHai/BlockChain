@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.17+commit.8df45f5f"
+		"version": "0.8.18+commit.87f61d96"
 	},
 	"language": "Solidity",
 	"output": {
@@ -88,9 +88,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/Mapping.sol": "learnMapping"
+			"src/code_for_practice/solidity_learn/solidity_learn_remix/Mapping.sol": "learnMapping"
 		},
-		"evmVersion": "london",
+		"evmVersion": "paris",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -102,11 +102,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/Mapping.sol": {
-			"keccak256": "0x0249f13ce7e9f038671dc23fd4c17631a88167caf037158a3572a6bd5744c327",
+		"src/code_for_practice/solidity_learn/solidity_learn_remix/Mapping.sol": {
+			"keccak256": "0xd5d7239326d1b1e848c5863409f940c59446b8d901920e53d1ed02445204e776",
 			"urls": [
-				"bzz-raw://39389b0e36a3885f1b83e49902661401915d2f77f82eefda9d144596111082a0",
-				"dweb:/ipfs/QmaMEkL9h4QENTmU3qSpJFNMfUeX9uVAnLUEDjGdV4J659"
+				"bzz-raw://860255abb2af95cd6e659c3e2b974276165bbb172f3067eb2c59632e85c1ef7c",
+				"dweb:/ipfs/QmVe9BK4BUWutGnG5HTb4ShqCPt1j2aAU1Y1thrLtVdchT"
 			]
 		}
 	},

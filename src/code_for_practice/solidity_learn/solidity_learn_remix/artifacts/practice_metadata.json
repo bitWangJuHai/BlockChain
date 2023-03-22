@@ -6,29 +6,145 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "multiply",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "movie_id",
 						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "director",
+						"type": "string"
 					}
 				],
-				"stateMutability": "pure",
+				"name": "addMovie",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "valuePlusThree",
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "movie_id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "director",
+						"type": "string"
+					}
+				],
+				"name": "addMyMovie",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "movie_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMovieTitleById",
 				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_addr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "movie_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getMymovieTitleByAddressId",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "nonpayable",
+				"name": "movie",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "director",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "myMovie",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "title",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "director",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			}
 		],
@@ -45,7 +161,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"solidity_learn/view-pure-constant-modifiers.sol": "Practice"
+			"src/code_for_practice/solidity_learn/solidity_learn_remix/Mapping.sol": "practice"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -59,12 +175,11 @@
 		"remappings": []
 	},
 	"sources": {
-		"solidity_learn/view-pure-constant-modifiers.sol": {
-			"keccak256": "0xbb2739b0e9d0e5d8f40d364348da5409c5f0aa515eda0dc8b2783598f8723c06",
-			"license": "MIT",
+		"src/code_for_practice/solidity_learn/solidity_learn_remix/Mapping.sol": {
+			"keccak256": "0xd5d7239326d1b1e848c5863409f940c59446b8d901920e53d1ed02445204e776",
 			"urls": [
-				"bzz-raw://dc896957fe8cfd349f8d29f030531a2bd752d7a84aed8e356ca50f814444009a",
-				"dweb:/ipfs/QmWCua63DyS22ZSb4BuUqR7X2zfxah4ZhYzSRtxBZd17ZF"
+				"bzz-raw://860255abb2af95cd6e659c3e2b974276165bbb172f3067eb2c59632e85c1ef7c",
+				"dweb:/ipfs/QmVe9BK4BUWutGnG5HTb4ShqCPt1j2aAU1Y1thrLtVdchT"
 			]
 		}
 	},
