@@ -1,6 +1,7 @@
 ## 本人区块链工作相关文档
 ### 例会相关链接
 - 汇报用石墨文档：https://shimo.im/docs/KlkKVblPnjSp4oqd
+- 帮助链接汇总文档：https://shimo.im/docs/2wAlXWg1YgS0O5AP
 - 腾讯会议房间号：943-6880-9403
 - 腾讯会议房间密码：438121
 
