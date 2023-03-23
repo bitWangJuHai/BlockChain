@@ -1,1 +1,32 @@
-### 本人区块链工作相关文档
+## 本人区块链工作相关文档
+### 例会相关链接
+- 汇报用石墨文档：https://shimo.im/docs/KlkKVblPnjSp4oqd
+- 腾讯会议房间号：943-6880-9403
+- 腾讯会议房间密码：438121
+
+### 同组成员仓库
+- 傅泽：https://github.com/Endericedragon/ReproducingBlockchain
+- 蒙思洁：https://github.com/LancerEnk/GraduationDesign
+- 狄永正：https://github.com/diyz19/GraduationDesign/tree/master/Reproduct-doc
+- 王聚海：https://github.com/bitWangJuHai/BlockChain
+- 周畅：https://github.com/xyongcn/BlockChain2017
+
+### 相关链接
+#### 官方文档
+- [以太坊官网](https://ethereum.org/en/)（包含白皮书、共识机制等关键信息）
+- [以太坊官方github仓库](https://github.com/ethereum)
+- [geth官方文档](https://geth.ethereum.org/docs/getting-started)
+- [remix使用手册](https://remix-ide.readthedocs.io/en/latest/index.html)
+- [truffle官方文档](https://trufflesuite.com/docs/)
+- [truffle中文文档](https://learnblockchain.cn/docs/truffle/quickstart.html)
+- [web3js官方文档](https://web3js.readthedocs.io/en/v1.8.1/index.html)
+- [web3js官方github仓库](https://github.com/web3/web3.js)
+- [web3js中文文档](https://learnblockchain.cn/docs/web3.js/index.html)  
+- [Solidity官方文档](https://docs.soliditylang.org/en/v0.8.17/)
+- [Solidity中文文档](https://solidity-cn.readthedocs.io/zh/develop/index.html)  
+- [solc-js官方github仓库](https://github.com/ethereum/solc-js)（包含使用说明）
+#### 社区论坛
+- [以太坊社区支持](https://ethereum.org/en/community/support/)（基本都在reddit和discord）
+- [reddit以太坊板块](https://www.reddit.com/r/ethereum/)
+- [ethereum.stackexchange](https://ethereum.stackexchange.com/)
+- [stackoverflow](https://stackoverflow.com)
