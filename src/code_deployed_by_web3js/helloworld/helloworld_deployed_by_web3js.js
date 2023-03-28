@@ -5,16 +5,16 @@ var Web3 = require('web3');
 //编译合约
 var contractCode = fs.readFileSync("helloworld.sol", "utf-8")
 var input = {
-    language: 'Solidity',
-    sources: {
-      'helloworld.sol': {
-        content: contractCode
+    "language": "Solidity",
+    "sources": {
+      "helloworld.sol": {
+        "content": contractCode
       }
     },
-    settings: {
-      outputSelection: {
-        '*': {
-          '*': ['*']
+    "settings": {
+      "outputSelection": {
+        "*": {
+          "*": ["*"]
         }
       }
     }
@@ -53,7 +53,7 @@ web3.eth.getAccounts().then( accounts => {
     gas: 1500000,
     gasPrice: '19904412217'
   }, (err, transactionHash) => {
-    if(!err){
+    if( !err ){
       console.log("TransactionHash: " + transactionHash)
       console.log("Waiting for mine")
     } else {

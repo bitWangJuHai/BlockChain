@@ -20,8 +20,9 @@
 //操作系统
 Ubuntu：22.04.2 LTS
 //js语言环境
-node：18.15
+node：18.15.0
 npm：9.6.2
+web3js：1,9,0
 //go语言环境
 go：1.19.5  
 //以太坊客户端
@@ -31,12 +32,6 @@ solc：0.8.19
 solcjs：0.8.19
 //Remix-IDE版本
 remix-desktop：1.3.6
-//truffle框架及工具版本
-truffle：5.8.1(core：5.8.1)
-Ganache：7.7.7
-Solidity：0.5.16(solc-js)
-node：18.14.2
-web3.js：1.8.2
 ```
 ### 相关帮助链接
 #### 例会相关（2023上半年）
