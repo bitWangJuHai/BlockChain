@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_str",
+						"type": "string"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "getContent",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"src/code_deployed_by_remixIDE/helloworld/helloworld.sol": "helloworld"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"src/code_deployed_by_remixIDE/helloworld/helloworld.sol": {
+			"keccak256": "0x2fabdabc3d99a09d61ce8c9f5444a473ddf4205ecd84a74ac97a09a7fcf930dd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0b08c29bfe4c4650e3004dd5ed3e3cd18b101b2fe0b415fe113cc48a58e97b89",
+				"dweb:/ipfs/QmcUYdSS1e36rMh2nMeWU7r2mc3uAdWT9ENywqRRdM5Zme"
+			]
+		}
+	},
+	"version": 1
+}
