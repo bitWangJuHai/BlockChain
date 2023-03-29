@@ -2,13 +2,6 @@
 - 本仓库最后更新于2023年上半年
 - 如无特殊需求请先阅读`guides/`部分
 - 本人水平有限撰写文档的过程中难免有疏漏，希望读者能及时指出，本人QQ油箱：592175501@qq.com
-### 仓库目录索引
-- `guides/`：区块链工作指导文档
-- `src/`：指导文档中使用的无注释版本的代码，其中的所有代码都可以通过指导文档索引到
-- `bin/`：工作中使用的可执行文件
-- `reference/`：相关参考文档及代码，详见[reference_readme](./reference/readme.md)
-- `doc_learn/`：一些本人用作学习及练习的代码，基本没有参考价值
-- `img/`：指导文档中使用的图片
 ### 阅读文档基础要求
 - linux基本使用
 - go语言程序阅读
@@ -18,6 +11,13 @@
 - 智能合约工作原理
 - solidity程序阅读及编写
 - 适当的科学上网
+### 仓库目录索引
+- `guides/`：区块链工作指导文档
+- `src/`：指导文档中使用的无注释版本的代码，其中的所有代码都可以通过指导文档索引到
+- `bin/`：工作中使用的可执行文件
+- `reference/`：相关参考文档及代码，详见[reference_readme](./reference/readme.md)
+- `doc_learn/`：一些本人用作学习及练习的代码，基本没有参考价值
+- `img/`：指导文档中使用的图片
 ### 相关帮助链接
 #### 例会相关（2023上半年）
 - 汇报用石墨文档：https://shimo.im/docs/KlkKVblPnjSp4oqd
@@ -30,6 +30,7 @@
 - 蒙思洁：https://github.com/LancerEnk/GraduationDesign
 - 狄永正：https://github.com/diyz19/GraduationDesign
 - 王聚海：https://github.com/bitWangJuHai/BlockChain
+- 万琦铃：https://github.com/CHARLENE-W/GraduationProject
 #### 各种工具的官方文档
 - [以太坊官网](https://ethereum.org/en/)（包含白皮书、共识机制等关键信息）
 - [以太坊官方github仓库](https://github.com/ethereum)
