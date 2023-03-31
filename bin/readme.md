@@ -21,7 +21,7 @@
     GOPATH=
     GOROOT=/usr/local/go
     ```
-- geth1：基于geth1.9.12改动的物理位置区块链程序
+- geth1：基于geth1.9.12改动的物理位置区块链
     ```
     Geth
     Version: 1.9.12-stable
@@ -34,7 +34,7 @@
     GOPATH=
     GOROOT=/usr/local/go
     ```
-- geth-tree：基于geth1改动的树桩物理位置区块链程序
+- geth-tree：基于geth1改动的树状物理位置区块链
     ```
     Geth
     Version: 1.9.12-stable
