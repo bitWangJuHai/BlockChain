@@ -11,19 +11,18 @@
         "istanbulBlock": 0,
         "ethash": {}
     },
-    "difficulty": "1",
+    "difficulty": "1100000",
     "gasLimit": "8000000",
     "alloc": {
-      "0xdB9455832fC2b9D591b3e47A276D9Ed613B8d7df": {
-        "balance":"50000000000000000000000000000000000000000",
+    "0x14aFcb6F973d7536E0F6546E2EAf07809d7fbB1D": {
+        "balance":"500000000000000000000",
         "position":"test0123456789",
         "txtime":1
-      },
-      "0xb4Be0a9443369ea2eDf1A5eaF788Ec4A00d7f142": {
-        "balance":"50000000000000000000000000000000000000000",
+    },
+    "0x00DA7F80Cf9a6711d023942B77FcE0aC92770b7B": {
+        "balance":"400000000000000000000",
         "position":"test1123456789",
         "txtime":2
-      }
-    },
-    "timestamp": "0x5ddf8f3e"
+    }
+    }
 }
