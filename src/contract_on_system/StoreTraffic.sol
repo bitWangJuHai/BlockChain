@@ -1,4 +1,5 @@
-pragma solidity ^0.5.16;
+// SPDX-License-Identifier: MIT
+pragma solidity >= 0.5.16;
 
 contract StoreTraffic{
 
@@ -106,8 +107,8 @@ contract StoreTraffic{
         return (position,regionVehicles[index]);
     }
 
-    function getVehicleStatus(bytes32 vehicleId) public view returns (int32){
-        int32 status = int32(vehicles[vehicleId].status);
+    function getVehicleStatus(bytes32 vehicleId) public view returns (uint256){
+        uint256 status = vehicles[vehicleId].status;
         return status;
     }
 
@@ -255,7 +256,7 @@ contract StoreTraffic{
         bool even = true;
         uint256 lat = 0;
         for (uint256 i = 0; i < bytes(geohash).length; i++) {
-            byte c = bytes(geohash)[i];
+            bytes1 c = bytes(geohash)[i];
             uint256 cd;
             for (uint256 j = 0; j < bytes(Base32).length; j++) {
                 if (bytes(Base32)[j] == c) {
@@ -282,7 +283,7 @@ contract StoreTraffic{
         bool even = true;
         uint256 lon = 0;
         for (uint256 i = 0; i < bytes(geohash).length; i++) {
-            byte c = bytes(geohash)[i];
+            bytes1 c = bytes(geohash)[i];
             uint256 cd;
             for (uint256 j = 0; j < bytes(Base32).length; j++) {
                 if (bytes(Base32)[j] == c) {
