@@ -34,3 +34,7 @@ geth1：
 go：1.20.2 linux/amd64  
 //C语言环境  
 gcc： 11.3.0 (Ubuntu 11.3.0-1ubuntu1~22.04)
+//js语言环境
+node：18.15.0
+npm-solc：0.8.19+commit.7dd6d404.Emscripten.clang
+npm-web3：1.9.0
