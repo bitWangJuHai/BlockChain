@@ -71,7 +71,7 @@ contract StoreMap {
 				names[i] = ele1.name;
 				highways[i] = ele1.highway;
 				gtypes[i] = ele1.gtype;
-				//总路径点数增加
+				//区域总路径点数增加
 				path_num = path_num + 1 + ele1.path_num;
 			}
 
@@ -121,6 +121,9 @@ contract StoreMap {
 	}
 	function changeP(uint32 newP) public returns (uint32){
 		return nav.changeP(newP);
+	}
+	function get_types(bytes32 hash) view public returns (uint32[] memory feature, bytes32[] memory names, bytes32[] memory highways, bytes32[] memory gtypes, bytes32[] memory path) {
+		return get_elements(hash);
 	}
 
 }

@@ -10,3 +10,5 @@
 |修改|-|修改了未知原因的[类型声明](https://docs.soliditylang.org/en/v0.8.19/types.html#fixed-size-byte-arrays)问题|`byte c = bytes(geohash)[i]`|`bytes1 c = bytes(geohash)[i]`|
 |修改|-|同上|`byte c = bytes(geohash)[i]`|`bytes1 c = bytes(geohash)[i]`|
 |修改|-|将getVehicleStatus函数的参数从int32改为uint256|||
+|增加|-|在getVehicle函数中增加执行条件|-|`require(vehiclesLength > 0, "No vehicle in system!")`|
+|增加|-|在getVehicleByRegion函数中增加执行条件|-|`require(regionVehicles.length > 0, "No vehicle in this area")`|

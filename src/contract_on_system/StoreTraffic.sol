@@ -3,60 +3,46 @@ pragma solidity >= 0.5.16;
 
 contract StoreTraffic{
 
-		//乘客支付后触发支付监听通知车辆
-		event payEvent(
-			bytes32 vehicleId
-		);
-		function confirmPay(bytes32 vehicleId) public {
-			emit payEvent(vehicleId);
-		}
+    event payEvent(
+        bytes32 vehicleId
+    );
+    function confirmPay(bytes32 vehicleId) public {
+        emit payEvent(vehicleId);
+    }
 
-        //乘客获取导航结果后确认上车
-		event boardEvent(
-			bytes32 vehicleId
-		);
-		function confirmBoard(bytes32 vehicleId) public {
-			emit boardEvent(vehicleId);
-		}
+    event boardEvent(
+        bytes32 vehicleId
+    );
+    function confirmBoard(bytes32 vehicleId) public {
+        emit boardEvent(vehicleId);
+	}
 
-    //导航结果的数据结构
-		struct oneRoute{
-			bytes32[] routeCoords;
-			uint256 routeCost;
-		}
-		//存储导航结果，车辆id->导航结果
-		mapping (bytes32 => oneRoute) routes;
-
+    struct oneRoute{
+        bytes32[] routeCoords;
+        uint256 routeCost;
+    }
+    mapping (bytes32 => oneRoute) routes;
     event routeEvent(
         bytes32 passengerId
     );
     function storeRoutes(uint256 cost, bytes32 vehicleId, bytes32 passengerId, bytes32[] memory route) public {
         routes[vehicleId].routeCoords = route;
-				routes[vehicleId].routeCost = cost;
+		routes[vehicleId].routeCost = cost;
         emit routeEvent(passengerId);
     }
     function getRoutes(bytes32 vehicleId) public view returns(bytes32[] memory route, uint256 cost){
         route = routes[vehicleId].routeCoords;
-				cost = routes[vehicleId].routeCost;
+		cost = routes[vehicleId].routeCost;
     }
 
-    //存储车辆信息
     struct vehicle {
         bytes32 vehicleId;
         bytes32 position;
         uint256 status;
     }
-
     mapping(bytes32 => vehicle) vehicles;
-
     mapping(uint256 => bytes32) vehiclesList;
     uint256 vehiclesLength = 0;
-    //乘客修改车辆的状态时触发的事件
-    event Myevent(
-        bytes32 vehicleId,
-        bytes32 passengerId,
-        bytes32 passengerGeohash
-    );
     function initVehicle(
         bytes32 vehicleId,
         bytes32 geohash
@@ -67,7 +53,6 @@ contract StoreTraffic{
         vehiclesList[vehiclesLength] = vehicleId;
         vehiclesLength = vehiclesLength + 1;
     }
-
     function deleteVehicle(bytes32 vehicleId) public {
         if(vehicleId == vehicles[vehicleId].vehicleId){
             delete vehicles[vehicleId];
@@ -75,12 +60,93 @@ contract StoreTraffic{
         }
     }
 
+    //获取一些车辆信息
+    function getVehicleStatus(bytes32 vehicleId) public view returns (uint256){
+        uint256 status = vehicles[vehicleId].status;
+        return status;
+    }
+    
+    //设置一些车辆信息
     function setVehicle(bytes32 vehicleId, bytes32 vehicleGeohash) public {
         vehicles[vehicleId].position = vehicleGeohash;
     }
+    event Myevent(
+        bytes32 vehicleId,
+        bytes32 passengerId,
+        bytes32 passengerGeohash
+    );
+    function setVehicleStatus(bytes32 vehicleId, bytes32 passengerId, bytes32 passengerGeohash) public {
+        require(vehicles[vehicleId].status == 0, "Vehicle busy");
+        emit Myevent(
+            vehicleId,
+            passengerId,
+            passengerGeohash
+        );
+        vehicles[vehicleId].status = 1;
+    }
+	function setVehicleStatusEmpty(bytes32 vehicleId) public {
+        require(vehicles[vehicleId].status == 1, "Vehicle is not busy");
+        vehicles[vehicleId].status = 0;
+    }
+    event rejectEvent(
+        bytes32 passengerId
+    );
+    function setRejectVehicleStatus(bytes32 vehicleId, bytes32 passengerId) public {
+        require(vehicles[vehicleId].status == 1, "Vehicle is not busy");
+        vehicles[vehicleId].status = 0;
+        emit rejectEvent(passengerId);
+    }
 
-    function getVehicle(bytes32 passengerGeohash) public view returns (bytes32, bytes32){
+    struct passenger {
+        bytes32 passengerId;
         bytes32 position;
+        bytes32 start;
+        bytes32 end;
+        uint256 status;
+    }
+    mapping(bytes32 => passenger) passengers;
+    mapping(uint256 => bytes32) passengersList;
+    uint256 passengersLength = 0;
+    //初始化乘客函数：根据乘客的id和geohash位置在区块链上初始化一个乘客
+    function initPassenger(
+        bytes32 passengerId,
+        bytes32 geohash
+    ) public {
+        passengers[passengerId].position = geohash;
+        passengers[passengerId].status = 0;
+        passengersList[passengersLength] = passengerId;
+        passengersLength = passengersLength + 1;
+    }
+
+    //设置一些乘客信息
+    function setPassengerPosition(
+        bytes32 passengerId,
+        bytes32 passengerGeohash
+    ) public {
+        passengers[passengerId].position = passengerGeohash;
+    }
+    function setPassengerDemand(
+        bytes32 passengerId,
+        bytes32 startGeohash,
+        bytes32 endGeohash
+    ) public {
+        passengers[passengerId].start = startGeohash;
+        passengers[passengerId].end = endGeohash;
+    }
+
+    //获取一些乘客信息
+    function getPassengerPos(bytes32 passengerId) public view returns (bytes32 position){
+        position = passengers[passengerId].position;
+    }
+    function getPassengerEnd(bytes32 passengerId) public returns (bytes32 end){
+        end = passengers[passengerId].end;
+        passengers[passengerId].status = 1;
+    }
+
+    //乘车匹配（全局）
+    function getVehicle(bytes32 passengerGeohash) public view returns (bytes32, bytes32){
+        require(vehiclesLength > 0, "No vehicle in system!");
+        bytes32 position = vehicles[vehiclesList[0]].position;
         uint256 index;
         for(uint256 i = 0; i < vehiclesLength; i++){
             if(manhattan(passengerGeohash,vehicles[vehiclesList[i]].position) < manhattan(passengerGeohash,position)){
@@ -92,9 +158,10 @@ contract StoreTraffic{
         }
         return (position,vehiclesList[index]);
     }
-
+    //乘车匹配（某区域）
     function getVehicleByRegion(bytes32 passengerGeohash, bytes32[] memory regionVehicles) public view returns (bytes32, bytes32){
-        bytes32 position;
+        require(regionVehicles.length > 0, "No vehicle in this area");
+        bytes32 position = vehicles[regionVehicles[0]].position;
         uint256 index;
         for(uint256 i = 0; i < regionVehicles.length; i++){
             if(manhattan(passengerGeohash,vehicles[regionVehicles[i]].position) < manhattan(passengerGeohash,position)){
@@ -107,83 +174,7 @@ contract StoreTraffic{
         return (position,regionVehicles[index]);
     }
 
-    function getVehicleStatus(bytes32 vehicleId) public view returns (uint256){
-        uint256 status = vehicles[vehicleId].status;
-        return status;
-    }
-
-    function setVehicleStatus(bytes32 vehicleId, bytes32 passengerId, bytes32 passengerGeohash) public {
-        assert(vehicles[vehicleId].status == 0);
-        emit Myevent(
-            vehicleId,
-            passengerId,
-            passengerGeohash
-        );
-        vehicles[vehicleId].status = 1;
-    }
-		function setVehicleStatusEmpty(bytes32 vehicleId) public {
-        assert(vehicles[vehicleId].status == 1);
-        vehicles[vehicleId].status = 0;
-    }
-
-    //车辆拒绝接客
-    event rejectEvent(
-        bytes32 passengerId
-    );
-    function setRejectVehicleStatus(bytes32 vehicleId, bytes32 passengerId) public {
-        vehicles[vehicleId].status = 0;
-        emit rejectEvent(passengerId);
-    }
-
-    //存储乘客信息
-    struct passenger {
-        bytes32 passengerId;
-        bytes32 position;
-        bytes32 start;
-        bytes32 end;
-        uint256 status;
-    }
-
-    mapping(bytes32 => passenger) passengers;
-
-    mapping(uint256 => bytes32) passengersList;
-    uint256 passengersLength = 0;
-
-    function initPassenger(
-        bytes32 passengerId,
-        bytes32 geohash
-    ) public {
-        passengers[passengerId].position = geohash;
-        passengers[passengerId].status = 0;
-        passengersList[passengersLength] = passengerId;
-        passengersLength = passengersLength + 1;
-    }
-
-    function setPassengerPosition(
-        bytes32 passengerId,
-        bytes32 passengerGeohash
-    ) public {
-        passengers[passengerId].position = passengerGeohash;
-    }
-    
-    function setPassengerDemand(
-        bytes32 passengerId,
-        bytes32 startGeohash,
-        bytes32 endGeohash
-    ) public {
-        passengers[passengerId].start = startGeohash;
-        passengers[passengerId].end = endGeohash;
-    }
-
-    function getPassengerPos(bytes32 passengerId) public view returns (bytes32 position){
-        position = passengers[passengerId].position;
-    }
-
-    function getPassengerEnd(bytes32 passengerId) public returns (bytes32 end){
-        end = passengers[passengerId].end;
-        passengers[passengerId].status = 1;
-    }
-
+    //计算两点的曼哈顿距离（匹配的时候用）：调用了sliceGeoHash函数
     function manhattan(bytes32 nextGeohash, bytes32 endGeohash) public view returns (uint256){
         if(nextGeohash == endGeohash){
             return 0;
@@ -223,6 +214,7 @@ contract StoreTraffic{
 		return PRECISION;
 	}
 
+    //调用了getLatBlock、getLonBlock函数
 	function sliceGeoHash(bytes32 geohash1, bytes32 geohash2) public view returns (string memory, string memory){
         bytes32 geo1 = geohash1;
         bytes32 geo2 = geohash2;
