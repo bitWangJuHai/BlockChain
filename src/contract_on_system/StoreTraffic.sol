@@ -60,6 +60,8 @@ contract StoreTraffic{
         }
     }
 
+    
+
     //获取一些车辆信息
     function getVehicleStatus(bytes32 vehicleId) public view returns (uint256){
         uint256 status = vehicles[vehicleId].status;
