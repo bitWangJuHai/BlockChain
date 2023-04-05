@@ -10,6 +10,7 @@ var solc = require('solc')		//此处使用的是读者个人的solc包，是使�
 var storeMapCode = fs.readFileSync("./StoreMap.sol", "utf-8")
 var storeMapImportCode = fs.readFileSync("./Navigation.sol", "utf-8")
 var storeTrafficCode = fs.readFileSync("./StoreTraffic.sol", "utf-8")
+var creditCode = fs.readFileSync("./credit.sol", "utf-8")
 var input = {
     "language": "Solidity",
     "sources": {
@@ -18,7 +19,10 @@ var input = {
       },
 	  "StoreTraffic.sol": {
         "content": storeTrafficCode
-      }
+      },
+	  "credit.sol": {
+		"content": creditCode
+	  },
     },
     "settings": {
       "outputSelection": {
@@ -42,6 +46,8 @@ var storeMap_abi = output.contracts['StoreMap.sol']['StoreMap'].abi
 var storeMap_bytecode = output.contracts['StoreMap.sol']['StoreMap'].evm.bytecode.object
 var storeTraffic_abi = output.contracts['StoreTraffic.sol']['StoreTraffic'].abi
 var storeTraffic_bytecode = output.contracts['StoreTraffic.sol']['StoreTraffic'].evm.bytecode.object
+var credit_abi = output.contracts['credit.sol']['Credit'].abi
+var credit_bytecode = output.contracts['credit.sol']['Credit'].evm.bytecode.object
 
 //合约部署函数
 var Web3 = require('web3')		//此处使用的是读者个人的web3包，是使用npm下载的
@@ -50,6 +56,7 @@ async function deploy(){
 	accounts = await web3.eth.getAccounts()
 	var storeMapContract = new web3.eth.Contract(storeMap_abi)
 	var storeTrafficContract = new web3.eth.Contract(storeTraffic_abi)
+	var creditContract = new web3.eth.Contract(credit_abi)
 	//部署地图存储合约
 	await storeMapContract.deploy({
 		data: storeMap_bytecode,
@@ -94,11 +101,34 @@ async function deploy(){
 	.then( (result) => {
 		storeTrafficInstance = result
 	})
+	//部署信誉值评估合约
+	await creditContract.deploy({
+		data: credit_bytecode,
+		arguments: []
+	}).send({
+		from: accounts[0],
+		gas: 6000000,
+		gasPrice: '19904412217'
+	}, (err, transactionHash) => {
+		if( !err ){
+		console.log("TransactionHash: " + transactionHash)
+		console.log("Waiting for mine")
+		} else {
+		console.log("Deploy error: " + err)
+		}
+	})
+	.on('receipt', (receipt) => {
+		console.log("Mined! (contractAddress: " + receipt.contractAddress + ")")
+	})
+	.then( (result) => {
+		creditInstance = result
+	})
 }
 
 var accounts
 var storeMapInstance
 var storeTrafficInstance
+var creditInstance
 
 //先等待部署完成再上传地图
 deploy().then( () => {
@@ -123,6 +153,7 @@ function uploadMap() {
 				console.log("地图数据上传完成!")
 				console.log("地图存储合约所在地址: " + storeMapInstance._address)
 				console.log("交通存储合约所在地址: " + storeTrafficInstance._address)
+				console.log("信誉值评估合约所在地址: " + creditInstance._address)
 			}, (reject) => { })
             //源程序此处是break，笔者认为如果元素数正好是loopNum的整数倍break之后执行if语句会出问题，故修改为return
 			return;
